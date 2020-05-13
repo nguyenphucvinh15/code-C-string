@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include<ctype.h>
+#include <string.h>
+int main ()
+{
+	char a[200];
+	fgets(a,200,stdin);
+	int n=strlen(a);
+for(int i=0;i<n;i++)
+	{
+		if(isupper(a[i]))
+		{
+				a[i]=tolower(a[i]);
+		}
+	}	
+	a[0]=toupper(a[0]);
+		for(int i=0;i<n;i++)
+	{
+	if(isblank(a[i]))	
+	{
+		a[i+1]=toupper(a[i+1]);
+	}
+}
+	puts(a);
+}
