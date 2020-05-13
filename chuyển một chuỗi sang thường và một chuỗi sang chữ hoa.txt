@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include<ctype.h>
+#include <string.h>
+int main ()
+{
+	char a[200];
+	fgets(a,200,stdin);
+	int m=strlen(a);
+	printf("Viet hoa:");
+	for(int i=0;i<m;i++)
+	{
+			printf("%c",toupper(a[i]));
+	}
+	
+	char b[200];
+	fgets(b,200,stdin);
+	int n=strlen(b);
+	printf("Viet thuong:");
+	for(int i=0;i<n;i++)
+	{
+			printf("%c",tolower(b[i]));
+	}
+}
+	
+	
