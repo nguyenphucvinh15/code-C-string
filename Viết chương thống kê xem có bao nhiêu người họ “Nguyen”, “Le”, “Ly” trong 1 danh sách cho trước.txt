@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> 
+typedef struct
+{
+	char hoten[30];
+}
+ht;
+void nhap(ht nguoi[], int *n)
+{
+    printf("Nhap so nguoi: ");
+    scanf("%d",n);
+    int i;
+    for(i=0;i<*n;i++)
+    {
+    	fflush(stdin);
+        printf("\nNhap nguoi %d: ",i+1);
+        gets(nguoi[i].hoten);
+    }
+    return;
+}
+void inra(ht nguoi[],int n)
+{
+    int i;
+    printf("\n");
+    for(i=0;i<n; i++)
+    puts(nguoi[i].hoten);
+    return;
+}
+int demHo(ht nguoi[],int n, char *s)
+{
+    char *ho;
+    int i,dem=0;
+    for(i=0;i<n;i++)
+    {
+    	ho=strtok(nguoi[i].hoten," ");
+        if(strcmp(ho,s)==0) dem++;        
+    }
+    return dem;
+}
+int main()
+{
+    ht nguoi[30];
+    int n;
+    nhap(nguoi,&n);
+    inra(nguoi,n);
+    char *Le="Le";
+    char *Nguyen="Nguyen";
+    char *Ly="Ly";
+    printf("\nNguyen:  %d",demHo(nguoi,n,Nguyen));
+    printf("\nLe:  %d",demHo(nguoi,n,Le));
+    printf("\nLy:  %d",demHo(nguoi,n,Ly));
+    return 0;
+} 
