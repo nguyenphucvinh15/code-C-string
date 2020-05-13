@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include<ctype.h>
+#include <string.h>
+void space(char a[],int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		if(a[i]==' ')
+		{
+			for(int j=i;j<n;j++)
+			{
+			a[j]=a[j+1];
+			}
+			n--;
+			i--;
+		}	
+	}
+}
+int main ()
+{
+	char a[200];
+	fgets(a,200,stdin);
+	int n=strlen(a);
+	char b[200];
+	fgets(b,200,stdin);
+	int m=strlen(b);
+	space(a,n);
+	printf("ten A:");
+	puts(a);
+	printf("\n");
+	printf("ten B:");
+	space(b,m);
+	puts(b);
+	printf("\n");
+	n=strlen(a);
+	m=strlen(b);
+	if(m==n)
+	{
+		int d=0;
+		strlwr(a);
+		strlwr(b);
+		for(int i=0;i<n;i++)
+		{
+			if(a[i]!=b[i])
+			{
+				d=1;
+			}
+		}
+		if(d==0)
+		printf("mang giong nhau");
+		else printf ("mang khac nhau");
+	}
+	else printf ("mang khac nhau");
+}
