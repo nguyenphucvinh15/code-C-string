@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int space(char c)
+{
+	return c==' '||c=='\n';
+}
+int kitu (char c)
+{
+return c == ',' || c == '.' || c == '(' || c == ')' 
+	|| c == '?' || c == ':' || c == ';' || c == '!';
+}
+void xoa (char *a)
+{
+	int n=strlen(a);
+for (int i=0;i<n;i++)	
+{
+	if (space(a[i])&&space(a[i+1]))
+	{
+		for (int j=i+1;j<n;j++)
+		{
+			a[j]=a[j+1];
+		}
+		i--;
+		n--;
+	}
+	else if (space(a[i])&&kitu(a[i+1]))
+	{
+		for (int j=i;j<n;j++)
+		{
+			a[j]=a[j+1];
+		}
+		i--;
+		n--;
+	}
+	else if (a[i]=='\t')
+	{
+		a[i]=' ';
+	}
+}
+}
+void viethoa (char *a)
+{
+	int n=strlen(a);
+	for (int i=0;i<n;i++)
+	{
+		if (isblank(a[i]))
+		{
+			a[i+1]=toupper(a[i+1]);
+		}
+	}
+}
+int main ()
+{
+	char a[100];
+	fgets (a,100,stdin);
+	xoa(a);
+	a[0]=toupper(a[0]);
+	viethoa (a);
+	puts(a);
+}
