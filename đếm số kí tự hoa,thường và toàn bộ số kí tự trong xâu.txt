@@ -20,7 +20,7 @@ for (int i=0;i<n;i++)
 	}	
 }
 printf("so ki tu hoa :%d\n",counthoa);
-printf("so ki tu thuong :%d\n",countthuong);\
+printf("so ki tu thuong :%d\n",countthuong);
 for (int i=0;i<n;i++)
 {
 	if (!(isblank(a[i])))
