@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+int main ()
+{
+	char a[100];
+	fgets (a,100,stdin);
+int n= strlen (a);
+int count;
+int counthoa=0;
+int countthuong=0;
+for (int i=0;i<n;i++)
+{
+	if (isupper (a[i]))
+	{counthoa++;
+	}
+	if (islower(a[i]))
+	{
+		countthuong++;
+	}	
+}
+printf("so ki tu hoa :%d\n",counthoa);
+printf("so ki tu thuong :%d\n",countthuong);\
+for (int i=0;i<n;i++)
+{
+	if (!(isblank(a[i])))
+	{
+		count ++;
+	}
+}
+printf("tat ca so ki tu la :%d",count-1);
+}
